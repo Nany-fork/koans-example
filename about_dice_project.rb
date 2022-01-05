@@ -7,13 +7,9 @@ class DiceSet
       @value
   end
 
-  def roll (arguments)
-      @value = []
-      range = (1..arguments)
-      for item in range
-          @value << item
-      end
-      @value
+  attr_reader :value
+  def roll(roll)
+    @value = (0...roll).map { 1 + rand(6) }
   end
 end
 
